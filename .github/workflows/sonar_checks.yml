@@ -19,7 +19,7 @@ env:
   ORG: knoldus Inc
   PROJECT_NAME: knoldus-leaderboard
   CODESQAUD_URL: https://www.getcodesquad.com/api/add/reports
-  AUTHOR: Kirti (KirtiGhugtyal6)
+  AUTHOR: MuZakkir Saifi
 jobs:
   check_techuhbservice:
     env:
@@ -40,26 +40,31 @@ jobs:
           ~/.ivy2/cache
           ~/.sbt
         key: ${{ runner.os }}-sbt-${{ hashFiles('**/build.sbt') }}
-    - name: Run Horusec
-      if: github.event_name == 'push'
-      env:
-        WORKING_DIR: techhub-service
-        AUTHOR: rahul.soni@knoldus.com
-        HORUSEC_CLI_RETURN_ERROR_IF_FOUND_VULNERABILITY: "false"
-      id: run_horusec
-      uses: fike/horusec-action@v0.2.2
-      with:
-        arguments: -p ./$WORKING_DIR --config-file-path=$WORKING_DIR/horusec-config.json -O $WORKING_DIR/sonarqube.json --return-error=false
+    # - name: Run Horusec
+    #   if: github.event_name == 'push'
+    #   env:
+    #     WORKING_DIR: techhub-service
+    #     AUTHOR: rahul.soni@knoldus.com
+    #     HORUSEC_CLI_RETURN_ERROR_IF_FOUND_VULNERABILITY: "false"
+    #   id: run_horusec
+    #   uses: fike/horusec-action@v0.2.2
+    #   with:
+    #     arguments: -p ./$WORKING_DIR --config-file-path=$WORKING_DIR/horusec-config.json -O $WORKING_DIR/sonarqube.json --return-error=false
 
     - name: Run test cases and generate reports for Tech hub
       working-directory: techhub-service
       env:
         URL: "jdbc:h2:mem:test;MODE=Oracle;"
         DRIVER: "org.h2.Driver"
-        # USERNAME:
-        # PASSWORD:
-      run: "sudo timedatectl set-timezone Asia/Kolkata\nsbt cpd\nsbt scapegoat\nsbt scalastyle  \nsbt coverage test coverageReport      \n  #magic___^_^___line\n"
+        USERNAME:
+        PASSWORD:
+      run: |
+        sudo timedatectl set-timezone Asia/Kolkata
+        sbt cpd
+        sbt scapegoat
+        sbt scalastyle  
+        sbt coverage test coverageReport   
     - name: Sonar coverage report
       if: github.event_name == 'push'
-      working-directory: techhub-service
+      working-directory: scoring-service
       run: sbt sonarScan
