@@ -10,7 +10,8 @@ lazy val doobieVersion = "1.0.0-RC1"
 val jacksonVersion = "2.13.2"
 val swaggerVersion = "2.2.0"
 val embeddedPostgresVersion = "1.0.1"
-
+lazy val root = (project in file("."))
+  .enablePlugins(SonarPlugin)
 // Run in a separate JVM, to make sure sbt waits until all threads have
 // finished before returning.
 // If you want to keep the application running while executing other
@@ -20,6 +21,8 @@ fork := true
 enablePlugins(JavaAppPackaging)
 enablePlugins(DockerPlugin)
 enablePlugins(AshScriptPlugin)
+addSbtPlugin("org.sonarsource.scanner.sbt" % "sbt-sonar" % "3.9.1")
+
 
 val swaggerDependencies = Seq(
   "jakarta.ws.rs" % "jakarta.ws.rs-api" % "3.0.0",
