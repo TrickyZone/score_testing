@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pmd-cpd>
+   <duplication lines="10" tokens="106">
+      <file line="84"
+            path="/home/knoldus/Desktop/test_space/lb_test/scoring-service/src/main/scala/com/knoldus/resources/ContributionResource.scala"/>
+      <file line="188"
+            path="/home/knoldus/Desktop/test_space/lb_test/scoring-service/src/main/scala/com/knoldus/resources/ContributionResource.scala"/>
+      <codefragment><![CDATA[    description = "Get scores aggregated by type of contribution for all individuals for a particular month",
+    method = "GET",
+    parameters = Array(
+      new Parameter(name = "month", in = ParameterIn.QUERY, required = true, description = "Month",
+        content = Array(new Content(schema = new Schema(implementation = classOf[String], allowableValues = Array())))),
+      new Parameter(name = "year", in = ParameterIn.QUERY, required = true, description = "Year",
+        content = Array(new Content(schema = new Schema(implementation = classOf[String], allowableValues = Array()))))
+    ),
+    responses = Array(
+      new ApiResponse(responseCode = "200", description = "Individual Contribution Type Scores",]]></codefragment>
+   </duplication>
+   <duplication lines="10" tokens="104">
+      <file line="84"
+            path="/home/knoldus/Desktop/test_space/lb_test/scoring-service/src/main/scala/com/knoldus/resources/ContributionResource.scala"/>
+      <file line="188"
+            path="/home/knoldus/Desktop/test_space/lb_test/scoring-service/src/main/scala/com/knoldus/resources/ContributionResource.scala"/>
+      <file line="219"
+            path="/home/knoldus/Desktop/test_space/lb_test/scoring-service/src/main/scala/com/knoldus/resources/ContributionResource.scala"/>
+      <codefragment><![CDATA[    description = "Get scores aggregated by type of contribution for all individuals for a particular month",
+    method = "GET",
+    parameters = Array(
+      new Parameter(name = "month", in = ParameterIn.QUERY, required = true, description = "Month",
+        content = Array(new Content(schema = new Schema(implementation = classOf[String], allowableValues = Array())))),
+      new Parameter(name = "year", in = ParameterIn.QUERY, required = true, description = "Year",
+        content = Array(new Content(schema = new Schema(implementation = classOf[String], allowableValues = Array()))))
+    ),
+    responses = Array(
+      new ApiResponse(responseCode = "200", description = "Individual Contribution Type Scores",]]></codefragment>
+   </duplication>
+   <duplication lines="10" tokens="103">
+      <file line="103"
+            path="/home/knoldus/Desktop/test_space/lb_test/scoring-service/src/main/scala/com/knoldus/repository/ContributionScoreRepository.scala"/>
+      <file line="123"
+            path="/home/knoldus/Desktop/test_space/lb_test/scoring-service/src/main/scala/com/knoldus/repository/ContributionScoreRepository.scala"/>
+      <codefragment><![CDATA[    logger.info("Persisting Information in the Database")
+    val insertContributionScore: ConnectionIO[Int] =
+      sql"""INSERT INTO contribution_score( full_name, email, contribution_id, contribution_type, title,
+                 contribution_date, technology_details, url_details, studio_name, studio_id,  score, md5hash,tenant_id)
+          VALUES (${contributionScore.fullName}, ${contributionScore.email}, ${contributionScore.contributionId},
+          ${contributionScore.contributionType.toString},${contributionScore.title},${Timestamp.valueOf(contributionScore.contributionDate)},
+          ${contributionScore.technologyDetails}, ${contributionScore.urlDetails}, ${contributionScore.studioName},
+          ${contributionScore.studioId},${contributionScore.score}, ${contributionScore.md5Hash},${tenantId} )""".update.run
+
+    logger.info("Insert Statement = " + insertContributionScore)]]></codefragment>
+   </duplication>
+</pmd-cpd>

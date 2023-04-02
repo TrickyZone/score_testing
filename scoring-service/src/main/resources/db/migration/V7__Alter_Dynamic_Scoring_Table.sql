@@ -1,0 +1,2 @@
+ALTER TABLE dynamic_scoring ADD IF NOT EXISTS top_viewer_knolx_score_multiplier FLOAT NOT NULL DEFAULT 1;
+ALTER TABLE dynamic_scoring ADD IF NOT EXISTS highlighted_knolx_attendee_score_multiplier FLOAT NOT NULL DEFAULT 1;

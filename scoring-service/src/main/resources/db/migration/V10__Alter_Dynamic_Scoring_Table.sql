@@ -1,0 +1,1 @@
+ALTER TABLE dynamic_scoring RENAME COLUMN highlighted_knolx_attendee_score_multiplier TO spotlight_knolx_member_score_multiplier;

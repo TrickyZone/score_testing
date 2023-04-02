@@ -1,0 +1,1 @@
+UPDATE contribution_score SET contribution_type = 'Knolx Attendee' where contribution_type ='Top Viewer';

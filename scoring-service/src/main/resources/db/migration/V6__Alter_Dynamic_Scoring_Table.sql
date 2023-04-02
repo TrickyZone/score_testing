@@ -1,0 +1,1 @@
+ALTER TABLE dynamic_scoring ADD IF NOT EXISTS certification_score_multiplier FLOAT NOT NULL DEFAULT 1;

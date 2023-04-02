@@ -1,0 +1,12 @@
+update contribution_score set contribution_type = 'Blog' where contribution_type = 'BLOG';
+update contribution_score set contribution_type = 'Open source' where contribution_type = 'OPEN_SOURCE';
+update contribution_score set contribution_type = 'PMO Template' where contribution_type = 'PMO_TEMPLATES';
+update contribution_score set contribution_type = 'Conference' where contribution_type = 'CONFERENCE';
+update contribution_score set contribution_type = 'Research paper' where contribution_type = 'RESEARCH_PAPER';
+update contribution_score set contribution_type = 'Webinar' where contribution_type = 'WEBINAR';
+update contribution_score set contribution_type = 'Book' where contribution_type = 'BOOKS';
+update contribution_score set contribution_type = 'Meetup' where contribution_type = 'MEETUP';
+update contribution_score set contribution_type = 'Process Document' where contribution_type = 'PROCESSED_DOCUMENTS';
+update contribution_score set contribution_type = 'Knolx' where contribution_type = 'KNOLX';
+update contribution_score set contribution_type = 'Tech hub' where contribution_type = 'TECHHUB';
+update contribution_score set contribution_type = 'Proposal' where contribution_type = 'PROPOSAL';
