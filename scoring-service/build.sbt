@@ -88,10 +88,10 @@ coverageExcludedPackages := ".*QuickstartApp*;.*SwaggerHttpUiService*;.*SwaggerS
 
 
 sonarProperties := Map(
-  "sonar.host.url" -> "h.com",
-  "sonar.login" -> "b3d7f324bbfd5d8eb044ecf91a15fff510799110",
-  "sonar.projectName" -> "scoring-service",
-  "sonar.projectKey" -> "scoring-service",
+  "sonar.host.url" -> "http://3.88.10.34:9000/",
+  "sonar.login" -> "sqp_0e7cc6faba6bd723c14b51bfc3f99ea4bfc79dad",
+  "sonar.projectName" -> "first-project",
+  "sonar.projectKey" -> "first-project",
   "sonar.language" -> "scala",
   "sonar.sources" -> "src/main/scala",
   "sonar.tests" -> "src/test/scala",
