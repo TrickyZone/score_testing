@@ -52,7 +52,7 @@ jobs:
     #     arguments: -p ./$WORKING_DIR --config-file-path=$WORKING_DIR/horusec-config.json -O $WORKING_DIR/sonarqube.json --return-error=false
 
     - name: Run test cases and generate reports for Tech hub
-      working-directory: techhub-service
+      working-directory: scoring-service
       env:
         URL: "jdbc:h2:mem:test;MODE=Oracle;"
         DRIVER: "org.h2.Driver"
